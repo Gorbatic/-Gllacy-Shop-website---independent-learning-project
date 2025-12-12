@@ -1,1 +1,512 @@
+/* Inter */
+/* 400 */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter-400.woff2") format("woff2");
+}
+
+/* 700 */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/inter-700.woff2") format("woff2");
+}
+/* 900 */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/inter-900.woff2") format("woff2");
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 1366px;
+  min-height: 100%;
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Inter", sans-serif;
+  color: #2d3440;
+
+  background-color: #feafc3;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+input {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: #2d3440;
+}
+
+input::placeholder {
+  color: #b9b9b9;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Сentering container */
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+/* Button */
+.button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  text-decoration-line: none;
+  color:#2d3440;
+}
+
+.button-white {
+  background-color: rgba(252, 252, 252, 0.4);
+}
+
+.button-pink {
+  color: #fcfcfc;
+
+  background-color: #ff2f64;
+}
+
+/* Title */
+.title {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  font-family: "Inter", sans-serif;
+}
+
+/* INDEX */
+
+/* ШАПКА */
+/* Навигация */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+/* Левая колонка шапки */
+.nav-left-column {
+  display: flex;
+}
+
+.nav-link-logo {
+  width: 137px;
+  height: 56px;
+  margin-right: 16px;
+}
+
+/* Список навигации */
+.header-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 430px;
+
+  line-height: 20px;
+}
+
+.catalog-button-popup {
+  min-height: 36px;
+  padding: 8px 38px 8px 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: #2d3440;
+
+  background-color: transparent;
+  border: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 16px;
+
+  color: inherit;
+  text-decoration-line: none;
+}
+
+/* Попап каталога */
+.catalog-menu-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.catalog-menu {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.catalog-menu-link {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+/* Правая колонка шапки */
+.nav-right-column {
+  display: flex;
+  margin-left: 100px;
+}
+
+.address-tel {
+  display: flex;
+  align-items: center;
+  min-width: 148px;
+  margin-right: 16px;
+}
+
+.nav-tel {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  color: inherit;
+  text-decoration-line: none;
+}
+
+/* Список пользователя */
+.nav-user-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-button {
+  position: relative;
+
+  padding: 0;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: #2d3440;
+
+  background-color: rgba(252, 252, 252, 0.3);
+  border: none;
+}
+
+.nav-button-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 27px;
+}
+
+.nav-button-auth {
+  padding: 6px 16px 6px 38px;
+
+  border-radius: 30px;
+}
+
+.auth-svg {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+}
+
+.nav-button-cart {
+  padding: 6px 16px 6px 38px;
+
+  border-radius: 30px;
+}
+
+.cart-svg {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+}
+
+/* Попап поиска */
+
+/* Попап регистрации/входа */
+.popup-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.auth-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: #2d3440;
+  text-underline-position: under;
+  text-decoration-skip-ink: none;
+}
+
+/* Попап корзины */
+.cart-title-product {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cart-price-per-kg-product {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b9b9b9;
+}
+
+.cart-price-product {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cart-total {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+/* ОСНОВНОЕ СОДЕРЖИМОЕ */
+.main-container {
+  flex-grow: 1;
+}
+
+/* Слайдер */
+.slider-title {
+  font-size: 36px;
+}
+
+.slider-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Баннеры\выгода */
+.banner-card-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+/* Популярные вкусы */
+
+/* О нас */
+.advantages {
+  color: #565c66;
+}
+
+/* Рассылка */
+.blog {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: inherit;
+  text-decoration-line: none;
+}
+
+.news-hint {
+  line-height: 20px;
+  color: #565c66;
+}
+
+.subscribe-description {
+  color: #565c66;
+}
+
+/* Доставка */
+.delivery-label {
+  font-weight: 700;
+  line-height: 20px;
+}
+
+/* Контактная информация */
+.contact-info-title {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.contact-address {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contact-link {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+.contact-info-hint {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* ПОДВАЛ */
+/* Меню */
+.footer-menu-link {
+  font-size: 14px;
+  line-height: 20px;
+  color: inherit;
+  text-decoration-line: none;
+}
+
+.for-suppliers {
+  font-weight: 700;
+}
+
+/* HTML Academy */
+.developed-by-text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.developed-by-link {
+  color: inherit;
+  text-decoration-color: rgba(45, 52, 64, 0.5);
+  text-underline-position: under;
+  text-decoration-skip-ink: none;
+}
+
+
+/* CATALOG */
+
+/* ОСНОВНОЕ СОДЕРЖИМОЕ */
+/* Входная секция каталога */
+/* Хлебные крошки */
+.breadcrumbs-link {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: inherit;
+  text-decoration-line: none;
+}
+
+/* Фильтр */
+.filter-form {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Цена */
+.filter-price {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Карточки товаров */
+.card-taste-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.card-taste-price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* Пагинация */
+.pagination-link {
+  line-height: 20px;
+  color: inherit;
+  text-decoration-line: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
