@@ -264,6 +264,10 @@ input::placeholder {
   position: absolute;
   left: 16px;
   top: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Попап поиска */
