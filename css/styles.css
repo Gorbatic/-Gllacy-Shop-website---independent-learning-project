@@ -50,7 +50,7 @@ body {
   background-color: #feafc3;
 }
 
-/* Управление слайдером */
+/* Стили от слайдера */
 body:has(#bg1:checked) {
   background-color: #feafc3;
 }
@@ -78,14 +78,12 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid #2d3440;
   outline-offset: -2px;
+
+  transition: outline 0ms;
 }
 
 textarea {
   resize: none;
-}
-
-input[name="bg"] {
-  display: none;
 }
 
 input, textarea {
@@ -199,7 +197,7 @@ a.button {
   box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1),
               0px 0px 0px 4px rgba(252, 252, 252, 0.4);
 
-  transition: background-color 100ms ease-out, box-shadow 100ms ease-out, outline 100ms ease-out;
+  transition: background-color 100ms ease-out, box-shadow 100ms ease-out;
 }
 
 .button-white:hover {
@@ -217,8 +215,8 @@ a.button {
 
 .button-white:active {
   background-color: #fcfcfc;
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1);
-  outline: 2px solid #2d3440;
+  box-shadow: 0px 0px 0px 2px #2d3440,
+              0px 4px 12px 0px rgba(45, 52, 64, 0.1);
 }
 
 /*
@@ -267,7 +265,7 @@ a.button {
   box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1),
               0px 0px 0px 4px rgba(255, 47, 100, 0.3);
 
-  transition: color 100ms ease-out, background-color 100ms ease-out, box-shadow 100ms ease-out, outline 100ms ease-out;
+  transition: color 100ms ease-out, background-color 100ms ease-out, box-shadow 100ms ease-out;
 }
 
 .button-pink:hover {
@@ -287,8 +285,8 @@ a.button {
   color: #fcfcfc;
 
   background-color: #feafc3;
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1);
-  outline: 2px solid #2d3440;
+  box-shadow: 0px 0px 0px 2px #2d3440,
+              0px 4px 12px 0px rgba(45, 52, 64, 0.1);
 }
 
 /*
@@ -607,7 +605,7 @@ a.button {
 }
 
 /* Текущий слайдер */
-#bg1:checked ~ .index-main > .slider > .slider-strawberry {
+#bg1:checked ~ .slider-strawberry {
   display: grid;
   grid-template-rows: auto 28px;
   grid-template-columns: 52px 447px 1fr 104px;
@@ -656,35 +654,43 @@ a.button {
   line-height: 0;
 }
 
-.slider-pagination-button {
-  position: relative;
-
-  width: 12px;
-  height: 12px;
-  padding: 0;
-
-  border: 1px solid transparent;
-  border-radius: 50%;
-  opacity: 0.3;
-}
-
-.slider-pagination-button-current {
-  opacity: 1;
-}
-
-/* Переключатель слайдера */
-.slider-pagination-button .slider-label {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-
+.slider-pagination-dot {
   display: block;
   width: 12px;
   height: 12px;
 
+  background-color: rgba(252, 252, 252, 0.3);
   border-radius: 50%;
+  outline-color: #fcfcfc;
+
+  transition: background-color 300ms ease-out;
 
   cursor: pointer;
+}
+
+.slider-pagination-dot:hover {
+  outline: 1px solid #fcfcfc;
+  outline-offset: -1px;
+}
+
+.slider:has(#bg1:focus-visible) .slider-pagination-dot[for="bg1"],
+.slider:has(#bg2:focus-visible) .slider-pagination-dot[for="bg2"],
+.slider:has(#bg3:focus-visible) .slider-pagination-dot[for="bg3"] {
+  outline: 1px solid #2d3440;
+  outline-offset: -1px;
+}
+
+.slider-pagination-dot:active {
+  background-color: rgba(252, 252, 252, 0.5);
+  outline: none;
+
+  transition: background-color 100ms ease-out;
+}
+
+.slider-pagination-dot-current {
+  background-color: #fcfcfc;
+
+  pointer-events: none;
 }
 
 /* Соцсети */
@@ -707,14 +713,39 @@ a.button {
 }
 
 .social-button {
+  position: relative;
+
   display: block;
   width: 24px;
   height: 24px;
+  padding: 2px;
 
   border-radius: 50%;
+  outline: 2px solid rgba(252, 252, 252, 0.3);
+  background-clip: content-box;
+
+  transition: background-color 100ms ease-out, opacity 100ms ease-out;
+}
+
+.social-button:hover {
+  background-color: #2d3440;
+}
+
+.social-button:focus-visible {
+  background-color: #2d3440;
+  outline-offset: 0;
+}
+
+.social-button:active {
+  background-color: #2d3440;
+  opacity: 0.5;
 }
 
 .social-button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
   border-radius: 50%;
 }
 
@@ -766,7 +797,7 @@ a.button {
   background-color: #ffcbd8;
 }
 
-/* Кнопки слайдера */
+/* Управление слайдером */
 .wrapper-slider-buttons {
   position: absolute;
   top: 50%;
@@ -783,14 +814,48 @@ a.button {
   align-items: center;
   width: 38px;
   height: 38px;
-  padding: 0;
 
   background-color: rgba(252, 252, 252, 0.3);
   border: 2px solid #fcfcfc;
   border-radius: 50%;
+
+  transition: background-color 100ms ease-out, border 100ms ease-out;
 }
 
-.slider-prev {
+.slider-button:hover {
+  background-color: #fcfcfc;
+}
+
+.slider-button:hover .slider-button-path {
+  fill: #2d3440;
+}
+
+.slider-button:focus-visible {
+  background-color: rgba(252, 252, 252, 0.3);
+  border-color: #2d3440;
+  outline: none;
+}
+
+.slider-button:focus-visible .slider-button-path {
+  fill: #2d3440;
+}
+
+.slider-button:active {
+  background-color: rgba(252, 252, 252, 0.5);
+  border: none;
+}
+
+.slider-button:active .slider-button-path {
+  fill: #2d3440;
+}
+
+.slider-disabled {
+  opacity: 0.4;
+
+  pointer-events: none;
+}
+
+.slider-prev svg {
   transform: rotate(90deg);
 }
 
@@ -804,17 +869,6 @@ a.button {
 
 .slider-next-strawberry {
   margin-right: 2px;
-}
-
-/* Управление слайдером */
-.slider-button .slider-label {
-  position: absolute;
-
-  display: block;
-  width: 38px;
-  height: 38px;
-
-  border-radius: 50%;
 }
 
 /* Мини изображения */
@@ -855,7 +909,7 @@ a.button {
 
 /* Банан */
 /* Текущий слайдер */
-#bg2:checked ~ .index-main > .slider > .slider-banana {
+#bg2:checked ~ .slider-banana {
   display: grid;
   grid-template-rows: auto 28px;
   grid-template-columns: 52px 488px 1fr 104px;
@@ -879,7 +933,7 @@ a.button {
 
 /* Маршмеллоу */
 /* Текущий слайдер */
-#bg3:checked ~ .index-main > .slider > .slider-marshmallow {
+#bg3:checked ~ .slider-marshmallow {
   display: grid;
   grid-template-rows: auto 28px;
   grid-template-columns: 52px 488px 1fr 104px;
@@ -1050,7 +1104,6 @@ a.button {
 
 .blog-link {
   position: relative;
-  z-index: 1;
 
   display: block;
   min-height: 100%;
@@ -1061,6 +1114,10 @@ a.button {
 
   border-radius: 16px;
   overflow: hidden;
+}
+
+.blog-link:focus-visible {
+  outline-offset: 0;
 }
 
 .wrapper-blog-link-content {
@@ -1093,12 +1150,7 @@ a.button {
   top: 0;
   left: 0;
 
-  transform: scale(1.2);
-
   border-radius: 16px;
-
-  object-fit: cover;
-  object-position: 32px -80px;
 }
 
 .subscribe {
@@ -1216,7 +1268,10 @@ a.button {
 }
 
 .wrapper-delivery-label-and-info {
+  position: relative;
+
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -1236,6 +1291,66 @@ a.button {
   background-repeat: no-repeat;
   background-position: center;
   border: none;
+
+  cursor: help;
+}
+
+.info:focus-visible {
+  outline: none;
+}
+
+/* Тултип */
+.tooltip {
+  position: absolute;
+  top: -7px;
+  left: 0;
+
+  display: none;
+  min-width: 163px;
+  padding: 10px 8px;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: #565c66;
+
+  background-color: #ffffff;
+  border: 1px solid #b9b9b9;
+  border-radius: 1px;
+  box-shadow: 0px 4px 8px 0px rgba(194, 194, 194, 0.2);
+
+  pointer-events: none;
+}
+
+/* Вырезка слева, треугольник тултипа */
+.tooltip::before {
+  position: absolute;
+  top: 11px;
+  left: -6px;
+
+  width: 11px;
+  height: 11px;
+
+  background-color: #ffffff;
+  border-top: 1px solid #b9b9b9;
+  border-left: 1px solid #b9b9b9;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  transform: rotate(-45deg);
+
+  content: "";
+}
+
+.info:hover + .tooltip,
+.info:focus-visible + .tooltip {
+  display: block;
+}
+
+.tooltip-date {
+  left: 66px;
+}
+
+.tooltip-address {
+  left: 78px;
 }
 
 .delivery-field-phone {
@@ -1589,6 +1704,15 @@ a.button {
   appearance: none
 }
 
+.select-control:hover {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.select-control:focus {
+  outline: 2px solid #fcfcfc;
+  outline-offset: -2px;
+}
+
 /* Цена */
 .filter-group-price {
   width: 196px;
@@ -1670,11 +1794,29 @@ a.button {
 
   width: 16px;
   height: 16px;
-  padding: 0;
+  padding: 2px;
 
   background-color: #fcfcfc;
+  background-clip: content-box;
   border: none;
   border-radius: 50%;
+  box-shadow: inset 0 0 0 6px #2d3440;
+}
+
+.range-toggle:hover {
+  background-color: #2d3440;
+  box-shadow: inset 0 0 0 6px #fcfcfc;
+}
+
+.range-toggle:focus-visible {
+  background-color: #2d3440;
+  box-shadow: 0 0 0 2px #2d3440,
+              inset 0 0 0 6px #fcfcfc;
+  outline: none;
+}
+
+.range-toggle:active {
+  background-color: #2d3440;
   box-shadow: inset 0 0 0 6px #2d3440;
 }
 
@@ -1711,6 +1853,12 @@ a.button {
   display: inline-block;
 
   padding-left: 24px;
+
+  cursor: pointer;
+}
+
+.control:has(.control-input:disabled) {
+  cursor: default;
 }
 
 /* Кастомные маркеры */
@@ -1729,6 +1877,18 @@ a.button {
 .control-input[type="radio"] + .control-mark {
   border: 1px solid #2d3440;
   border-radius: 50%;
+
+  transition: border-color 100ms ease-out;
+}
+
+.control:hover .control-input[type="radio"] + .control-mark {
+  border-color: #fcfcfc;
+}
+
+.control .control-input[type="radio"]:disabled  + .control-mark {
+  border-color: rgba(45, 52, 64, 0.5);
+
+  pointer-events: none;
 }
 
 /* Включена */
@@ -1744,7 +1904,19 @@ a.button {
   background-color: #2d3440;
   border-radius: 50%;
 
+  transition: background-color 100ms ease-out;
+
   content: "";
+}
+
+.control:hover .control-input[type="radio"]:checked + .control-mark::before {
+  background-color: #fcfcfc;
+}
+
+.control .control-input[type="radio"]:checked:disabled + .control-mark::before {
+  background-color: rgba(45, 52, 64, 0.5);
+
+  pointer-events: none;
 }
 
 /* Наполнители */
@@ -1774,6 +1946,22 @@ a.button {
   visibility: visible;
 }
 
+.control-mark-path {
+  fill: currentColor;
+
+  transition: fill 100ms ease-out;
+}
+
+.control:hover .control-input[type="checkbox"] ~ .control-mark .control-mark-path {
+  fill: #fcfcfc;
+}
+
+.control .control-input[type="checkbox"]:disabled ~ .control-mark .control-mark-path {
+  fill: rgba(45, 52, 64, 0.5);
+
+  pointer-events: none;
+}
+
 .control-label {
   display: inline-block;
 }
@@ -1790,8 +1978,35 @@ a.button {
   font-family: "Inter", sans-serif;
 
   background-color: rgba(252, 252, 252, 0.3);
+  background-clip: padding-box;
   border: 2px solid #fcfcfc;
   border-radius: 20px;
+
+  transition: background-color 100ms ease-out, border-color 100ms ease-out;
+}
+
+.filter-button-submit:hover {
+  background-color: #fcfcfc;
+  border-color: rgba(252, 252, 252, 0.3);
+}
+
+.filter-button-submit:focus-visible {
+  border-color: #2d3440;
+  outline: none;
+
+  transition: none;
+}
+
+.filter-button-submit:active {
+  background-color: rgba(252, 252, 252, 0.5);
+  border-color: rgba(252, 252, 252, 0.5);
+}
+
+.filter-button-submit:disabled {
+  opacity: 0.4;
+
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Карточки товаров */
@@ -1808,6 +2023,8 @@ a.button {
 .product-card-item {
   position: relative;
 
+  display: flex;
+  flex-direction: column;
   margin-top: 51px;
   padding: 133px 40px 24px 40px;
 
@@ -1843,7 +2060,7 @@ a.button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 16px;
+  margin-top: auto;
 }
 
 .button-put-cart {
@@ -1855,8 +2072,54 @@ a.button {
   height: 32px;
 
   background-color: #ff2f64;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 50%;
+
+  transition: background-color 100ms ease-out;
+}
+
+.button-put-cart .put-cart-path {
+  fill: #fcfcfc;
+
+  transition: fill 100ms ease-out;
+}
+
+.button-put-cart:hover {
+  background-color: rgba(252, 252, 252, 0.3);
+  border-color: #ff2f64;
+
+  transition: none;
+}
+
+.button-put-cart:hover .put-cart-path {
+  fill: #2d3440;
+
+  transition: none;
+}
+
+.button-put-cart:focus-visible {
+  border-color: #2d3440;
+  outline: none;
+}
+
+.button-put-cart:active {
+  background-color: #ffcbd8;
+  border-color: #ff2f64;
+}
+
+.button-put-cart:active .put-cart-path {
+  fill: #2d3440;
+}
+
+.button-put-cart:disabled {
+  background-color: #b9b9b9;
+
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button-put-cart:disabled .put-cart-path {
+  fill: #565c66;
 }
 
 .card-taste-price {
@@ -1893,6 +2156,19 @@ a.button {
   background-position: center;
 }
 
+
+/*
+  Если кнопка выключена:
+  - добавить aria-disabled="true"
+  - добавить tabindex="-1"
+*/
+.pagination-control[aria-disabled="true"] {
+  opacity: 0.3;
+
+  cursor: default;
+  pointer-events: none;
+}
+
 .pagination-back {
   transform: rotate(90deg);
 }
@@ -1913,11 +2189,30 @@ a.button {
   line-height: 20px;
   color: inherit;
   text-decoration-line: none;
+
+  border-radius: 50%;
+}
+
+.pagination-link:hover {
+  background-color: rgba(252, 252, 252, 0.5);
+}
+
+.pagination-link:focus-visible {
+  background-color: rgba(252, 252, 252, 0.3);
+  box-shadow: inset 0 0 0 1px #2d3440;
+  outline: none;
+}
+
+.pagination-link:active {
+  background-color: rgba(252, 252, 252, 0.5);
+  box-shadow: inset 0 0 0 1px #fcfcfc;
 }
 
 .pagination-link-current {
   background-color: #fcfcfc;
-  border-radius: 50%;
+
+  cursor: default;
+  pointer-events: none;
 }
 
 .pagination-next {
@@ -2222,12 +2517,3 @@ li:focus-within .popup {
 .popup-empty-title {
   margin: 0;
 }
-
-
-
-
-
-
-
-
-

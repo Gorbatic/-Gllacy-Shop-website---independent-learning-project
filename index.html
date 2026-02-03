@@ -9,18 +9,13 @@
   </head>
   <body>
     <div class="container">
-      <!-- Управление слайдером -->
-      <input type="radio" id="bg1" name="bg" checked>
-      <input type="radio" id="bg2" name="bg">
-      <input type="radio" id="bg3" name="bg">
       <!-- ШАПКА -->
-      <header class="index-header">
+      <header>
         <nav class="nav">
           <!-- Левая колонка шапки -->
           <div class="nav-left-column">
-            <a class="nav-link-logo">
+            <a class="nav-link-logo" href="index.html">
               <img
-               class="nav-logo"
                src="img/content/logo.svg"
                alt="Логотип интернет-магазина «Gllacy Shop»"
                width="137"
@@ -40,16 +35,16 @@
                 <div class="popup popup-catalog">
                   <h2 class="catalog-menu-title">Новинки</h2>
                   <ul class="catalog-menu">
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="catalog.html">Сливочное</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="#">Щербеты</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link catalog-menu-link-nowrap" href="#">Фруктовый лед</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="#">Мелорин</a>
                     </li>
                   </ul>
@@ -137,25 +132,25 @@
                     <h2 class="popup-title auth-title">Личный кабинет</h2>
                     <label class="visually-hidden" for="popup-auth-email-field">Ваш E-mail:</label>
                     <input
-                     class="auth-email-field"
                      id="popup-auth-email-field"
                      type="email"
                      name="email"
                      placeholder="email@example.com"
                      required
+                     autocomplete="on"
                     >
                     <label class="visually-hidden" for="popup-auth-password-field">Пароль:</label>
                     <input
-                     class="auth-password-field"
                      id="popup-auth-password-field"
                      type="password"
                      name="password"
                      placeholder="Введите пароль"
                      required
+                     autocomplete="on"
                     >
                     <div class="wrapper-auth-btn-and-links">
                       <button type="submit" class="button button-pink auth-button-login">Войти</button>
-                      <div class="wrapper-auth-links">
+                      <div>
                         <a class="auth-link" href="#">Забыли пароль?</a>
                         <a class="auth-link" href="#">Регистрация</a>
                       </div>
@@ -235,6 +230,10 @@
         <h1 class="visually-hidden">«Глейси» — сайт магазина мороженого.</h1>
         <!-- Слайдер -->
         <section class="slider">
+          <!-- Управление слайдером -->
+          <input class="visually-hidden" type="radio" id="bg1" name="bg" checked>
+          <input class="visually-hidden" type="radio" id="bg2" name="bg">
+          <input class="visually-hidden" type="radio" id="bg3" name="bg">
           <h2 class="visually-hidden">Хитовое мороженное.</h2>
           <!-- Клубника -->
           <div class="slider-product slider-strawberry">
@@ -249,22 +248,19 @@
             <!-- Пагинация слайдера -->
             <ol class="slider-pagination-list">
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button slider-pagination-button-current">
+                <label for="bg1" class="slider-pagination-dot slider-pagination-dot-current">
                   <span class="visually-hidden">1 товар.</span>
-                  <label  for="bg1" class="slider-label"></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg2" class="slider-pagination-dot">
                   <span class="visually-hidden">2 товар.</span>
-                  <label  for="bg2" class="slider-label"></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg3" class="slider-pagination-dot">
                   <span class="visually-hidden">3 товар.</span>
-                  <label  for="bg3" class="slider-label"></label >
-                </button>
+                </label>
               </li>
             </ol>
             <!-- Соцсети -->
@@ -340,7 +336,7 @@
                 >
                 <!-- Кнопки слайдера -->
                 <div class="wrapper-slider-buttons">
-                  <button type="button" class="slider-button slider-prev slider-prev-strawberry">
+                  <label class="slider-button slider-prev slider-disabled slider-prev-strawberry" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -350,12 +346,11 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Предыдущий товар.</span>
-                    <label  for="bg3" class="slider-label"></label>
-                  </button>
-                  <button type="button" class="slider-button slider-next slider-next-strawberry">
+                  </label>
+                  <label for="bg2" class="slider-button slider-next slider-next-strawberry" tabindex="0" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -365,11 +360,10 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Следующий товар.</span>
-                    <label  for="bg2" class="slider-label"></label>
-                  </button>
+                  </label>
                 </div>
               </div>
               <!-- Мини-фото следующих товаров -->
@@ -407,22 +401,19 @@
             <!-- Пагинация слайдера -->
             <ol class="slider-pagination-list">
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg1" class="slider-pagination-dot">
                   <span class="visually-hidden">1 товар.</span>
-                  <label  for="bg1" class="slider-label "></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button slider-pagination-button-current">
+                <label for="bg2" class="slider-pagination-dot slider-pagination-dot-current">
                   <span class="visually-hidden">2 товар.</span>
-                  <label  for="bg2" class="slider-label "></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg3" class="slider-pagination-dot">
                   <span class="visually-hidden">3 товар.</span>
-                  <label  for="bg3" class="slider-label "></label >
-                </button>
+                </label>
               </li>
             </ol>
             <!-- Соцсети -->
@@ -498,7 +489,7 @@
                 >
                 <!-- Кнопки слайдера -->
                 <div class="wrapper-slider-buttons">
-                  <button type="button" class="slider-button slider-prev">
+                  <label for="bg1" class="slider-button slider-prev" tabindex="0" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -508,12 +499,11 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Предыдущий товар.</span>
-                    <label  for="bg1" class="slider-label"></label>
-                  </button>
-                  <button type="button" class="slider-button slider-next">
+                  </label>
+                  <label for="bg3" class="slider-button slider-next" tabindex="0" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -523,11 +513,10 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Следующий товар.</span>
-                    <label  for="bg3" class="slider-label"></label>
-                  </button>
+                  </label>
                 </div>
               </div>
               <!-- Мини-фото следующих товаров -->
@@ -563,25 +552,21 @@
               <a class="button button-white slider-button-order" href="#">Заказать</a>
             </div>
             <!-- Пагинация слайдера -->
-            <!-- Пагинация слайдера -->
             <ol class="slider-pagination-list">
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg1" class="slider-pagination-dot">
                   <span class="visually-hidden">1 товар.</span>
-                  <label  for="bg1" class="slider-label "></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button">
+                <label for="bg2" class="slider-pagination-dot">
                   <span class="visually-hidden">2 товар.</span>
-                  <label  for="bg2" class="slider-label "></label >
-                </button>
+                </label>
               </li>
               <li class="slider-pagination-item">
-                <button type="button" class="slider-pagination-button slider-pagination-button-current">
+                <label for="bg3" class="slider-pagination-dot slider-pagination-dot-current">
                   <span class="visually-hidden">3 товар.</span>
-                  <label  for="bg3" class="slider-label "></label >
-                </button>
+                </label>
               </li>
             </ol>
             <!-- Соцсети -->
@@ -657,7 +642,7 @@
                 >
                 <!-- Кнопки слайдера -->
                 <div class="wrapper-slider-buttons">
-                  <button type="button" class="slider-button slider-prev">
+                  <label for="bg2" class="slider-button slider-prev" tabindex="0" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -667,12 +652,11 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Предыдущий товар.</span>
-                    <label  for="bg2" class="slider-label"></label>
-                  </button>
-                  <button type="button" class="slider-button slider-next">
+                  </label>
+                  <label class="slider-button slider-next slider-disabled" role="button">
                     <svg
                      width="16"
                      height="16"
@@ -682,11 +666,10 @@
                      aria-hidden="true"
                      focusable="false"
                     >
-                      <path fill="#fcfcfc" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
+                      <path class="slider-button-path" fill="#FCFCFC" fill-rule="evenodd" d="M3.808 6.1953a.6667.6667 0 1 0-.9428.9428l4.6603 4.6603A.6647.6647 0 0 0 8.0052 12a.6645.6645 0 0 0 .4695-.1953l.0062-.0062 4.6603-4.6604a.6667.6667 0 1 0-.9428-.9428l-4.1952 4.1952L3.808 6.1953Z" clip-rule="evenodd"/>
                     </svg>
                     <span class="visually-hidden">Следующий товар.</span>
-                    <label  for="bg1" class="slider-label"></label>
-                  </button>
+                  </label>
                 </div>
               </div>
               <!-- Мини-фото следующих товаров -->
@@ -766,75 +749,69 @@
                 <button type="button" class="button-put-cart">
                   <span class="visually-hidden">Положить в корзину.</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
+                    <path class="put-cart-path" d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
                   </svg>
                 </button>
               </div>
             </li>
             <li class="product-card-item">
-              <div class="card-taste">
-                <h3 class="card-taste-title">Фисташка</h3>
-                <img
-                 class="card-taste-image"
-                 src="/img/content/catalog/catalog-pistachio.png"
-                 alt=""
-                 width="168"
-                 height="168"
-                >
-                <p class="card-taste-description">Фисташковый пломбир с кусочками шоколада</p>
-                <div class="wrapper-price-n-button-cart">
-                  <b class="card-taste-price">340 ₽/кг</b>
-                  <button type="button" class="button-put-cart">
-                    <span class="visually-hidden">Положить в корзину.</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
-                    </svg>
-                  </button>
-                </div>
+              <h3 class="card-taste-title">Фисташка</h3>
+              <img
+               class="card-taste-image"
+               src="/img/content/catalog/catalog-pistachio.png"
+               alt=""
+               width="168"
+               height="168"
+              >
+              <p class="card-taste-description">Фисташковый пломбир с кусочками шоколада</p>
+              <div class="wrapper-price-n-button-cart">
+                <b class="card-taste-price">340 ₽/кг</b>
+                <button type="button" class="button-put-cart">
+                  <span class="visually-hidden">Положить в корзину.</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path class="put-cart-path" d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
+                  </svg>
+                </button>
               </div>
             </li>
             <li class="product-card-item">
-              <div class="card-taste">
-                <h3 class="card-taste-title">Черника</h3>
-                <img
-                 class="card-taste-image"
-                 src="/img/content/catalog/catalog-blueberries.png"
-                 alt=""
-                 width="168"
-                 height="168"
-                >
-                <p class="card-taste-description">Крем-брюле <br> с черничным джемом</p>
-                <div class="wrapper-price-n-button-cart">
-                  <b class="card-taste-price">330 ₽/кг</b>
-                  <button type="button" class="button-put-cart">
-                    <span class="visually-hidden">Положить в корзину.</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
-                    </svg>
-                  </button>
-                </div>
+              <h3 class="card-taste-title">Черника</h3>
+              <img
+               class="card-taste-image"
+               src="/img/content/catalog/catalog-blueberries.png"
+               alt=""
+               width="168"
+               height="168"
+              >
+              <p class="card-taste-description">Крем-брюле <br> с черничным джемом</p>
+              <div class="wrapper-price-n-button-cart">
+                <b class="card-taste-price">330 ₽/кг</b>
+                <button type="button" class="button-put-cart">
+                  <span class="visually-hidden">Положить в корзину.</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path class="put-cart-path" d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
+                  </svg>
+                </button>
               </div>
             </li>
             <li class="product-card-item">
-              <div class="card-taste">
-                <h3 class="card-taste-title">Бабл-гам</h3>
-                <img
-                 class="card-taste-image"
-                 src="/img/content/catalog/catalog-bubble-boom.png"
-                 alt=""
-                 width="168"
-                 height="168"
-                >
-                <p class="card-taste-description">Ванильный пломбир <br> со сладкой посыпкой</p>
-                <div class="wrapper-price-n-button-cart">
-                  <b class="card-taste-price">320 ₽/кг</b>
-                  <button type="button" class="button-put-cart">
-                    <span class="visually-hidden">Положить в корзину.</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
-                    </svg>
-                  </button>
-                </div>
+              <h3 class="card-taste-title">Бабл-гам</h3>
+              <img
+               class="card-taste-image"
+               src="/img/content/catalog/catalog-bubble-boom.png"
+               alt=""
+               width="168"
+               height="168"
+              >
+              <p class="card-taste-description">Ванильный пломбир <br> со сладкой посыпкой</p>
+              <div class="wrapper-price-n-button-cart">
+                <b class="card-taste-price">320 ₽/кг</b>
+                <button type="button" class="button-put-cart">
+                  <span class="visually-hidden">Положить в корзину.</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                    <path class="put-cart-path" d="M6.38968 12.2666C7.01798 12.3302 7.50882 12.8608 7.50882 13.5059C7.50859 14.1936 6.95052 14.7519 6.26273 14.752C5.61793 14.7517 5.08724 14.2608 5.02347 13.6328L5.01663 13.5059L5.02347 13.3779C5.08747 12.7502 5.61811 12.26 6.26273 12.2598L6.38968 12.2666ZM12.7637 12.2666C13.3918 12.3304 13.8828 12.8609 13.8828 13.5059C13.8826 14.1935 13.3244 14.7518 12.6367 14.752C11.9918 14.752 11.4613 14.2609 11.3975 13.6328L11.3907 13.5059L11.3975 13.3779C11.4615 12.75 11.9919 12.2598 12.6367 12.2598L12.7637 12.2666ZM4.06155 1.26074C4.32742 1.30809 4.54413 1.51367 4.59866 1.78613L5.07132 4.14746H14.3741C14.5726 4.14756 14.7611 4.23665 14.8877 4.38965C15.0141 4.54268 15.0665 4.74446 15.0293 4.93945L14.1026 9.80078L14.1016 9.80566C14.0181 10.2257 13.7887 10.6035 13.4551 10.8721C13.1247 11.1379 12.7119 11.2796 12.2881 11.2744L6.65628 11.2754V11.2744C6.23261 11.2795 5.81961 11.1378 5.48929 10.8721C5.15597 10.6037 4.92749 10.2263 4.84378 9.80664L3.39847 2.58398H1.62698C1.2589 2.58398 0.960168 2.28503 0.959991 1.91699C0.959991 1.5488 1.25879 1.25 1.62698 1.25H3.94437L4.06155 1.26074ZM6.1514 9.54492V9.5459C6.17396 9.65884 6.23557 9.7607 6.32523 9.83301C6.41512 9.90524 6.52828 9.94457 6.64359 9.94238L6.65628 9.94141H12.3018V9.94238C12.417 9.9444 12.5294 9.90526 12.6192 9.83301C12.709 9.76065 12.7714 9.65905 12.794 9.5459L13.5694 5.48047H5.33792L6.1514 9.54492Z" fill="#FCFCFC"/>
+                  </svg>
+                </button>
               </div>
             </li>
           </ul>
@@ -870,8 +847,8 @@
               </div>
               <img
                class="blog-image"
-               width="100%"
-               height="100%"
+               width="570"
+               height="224"
                alt="Стеклянная ваза с шариками мороженого розового и белого цвета, украшенная малиной и листиком мяты. Рядом клетчатая скатерть и ложка."
                src="img/content/index/blog-serving.jpg"
               >
@@ -894,6 +871,7 @@
                  name="email"
                  placeholder="email@example.com"
                  required
+                 autocomplete="on"
                 >
                 <button type="submit" class="button button-pink newsletter-button">Отправить</button>
               </form>
@@ -923,6 +901,7 @@
                       <button class="info date-info" type="button">
                         <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
                       </button>
+                      <span class="tooltip tooltip-date">Введите число, месяц и год</span>
                     </span>
                     <input
                      class="delivery-input delivery-input-date"
@@ -944,6 +923,7 @@
                      name="phone"
                      placeholder="+7 800 999-00-00"
                      required
+                     autocomplete="on"
                     >
                   </p>
                   <!-- Адрес -->
@@ -953,6 +933,7 @@
                       <button class="info address-info" type="button">
                         <span class="visually-hidden">Посмотреть дополнительную информацию.</span>
                       </button>
+                      <span class="tooltip tooltip-address">Введите название <br> улицы, дома и квартиры</span>
                     </span>
                     <input
                      class="delivery-input delivery-input-address"
@@ -961,6 +942,7 @@
                      name="address"
                      placeholder="ул. Большая Конюшенная, 19/8"
                      required
+                     autocomplete="on"
                     >
                   </p>
                 </div>
@@ -1099,6 +1081,7 @@
            type="text"
            placeholder="Имя и фамилия"
            autofocus
+           autocomplete="on"
           >
           <label class="visually-hidden" for="modal-feedback-email">E-mail:</label>
           <input
@@ -1107,6 +1090,7 @@
            type="email"
            placeholder="email@example.com"
            required
+           autocomplete="on"
           >
           <label class="visually-hidden" for="modal-feedback-question">Ваш вопрос:</label>
           <textarea class="modal-feedback-textarea" id="modal-feedback-question" name="question" placeholder="В свободной форме" required></textarea>
