@@ -1739,6 +1739,7 @@ a.button {
   border: none;
 
   appearance: textfield;
+  cursor: default;
 }
 
 .price-field::-webkit-outer-spin-button,

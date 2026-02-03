@@ -10,13 +10,12 @@
   <body>
     <div class="container">
       <!-- ШАПКА -->
-      <header class="index-header">
+      <header>
         <nav class="nav nav-inner">
           <!-- Левая колонка шапки -->
           <div class="nav-left-column">
             <a class="nav-link-logo" href="index.html">
               <img
-               class="nav-logo"
                src="img/content/logo.svg"
                alt="Логотип интернет-магазина «Gllacy Shop»"
                width="137"
@@ -36,16 +35,16 @@
                 <div class="popup popup-catalog">
                   <h2 class="catalog-menu-title">Новинки</h2>
                   <ul class="catalog-menu">
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="catalog.html">Сливочное</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="#">Щербеты</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link catalog-menu-link-nowrap" href="#">Фруктовый лед</a>
                     </li>
-                    <li class="catalog-menu-item">
+                    <li>
                       <a class="catalog-menu-link" href="#">Мелорин</a>
                     </li>
                   </ul>
@@ -133,25 +132,25 @@
                     <h2 class="popup-title auth-title">Личный кабинет</h2>
                     <label class="visually-hidden" for="popup-auth-email-field">Ваш E-mail:</label>
                     <input
-                     class="auth-email-field"
                      id="popup-auth-email-field"
                      type="email"
                      name="email"
                      placeholder="email@example.com"
                      required
+                     autocomplete="on"
                     >
                     <label class="visually-hidden" for="popup-auth-password-field">Пароль:</label>
                     <input
-                     class="auth-password-field"
                      id="popup-auth-password-field"
                      type="password"
                      name="password"
                      placeholder="Введите пароль"
                      required
+                     autocomplete="on"
                     >
                     <div class="wrapper-auth-btn-and-links">
                       <button type="submit" class="button button-pink auth-button-login">Войти</button>
-                      <div class="wrapper-auth-links">
+                      <div>
                         <a class="auth-link" href="#">Забыли пароль?</a>
                         <a class="auth-link" href="#">Регистрация</a>
                       </div>
@@ -177,7 +176,7 @@
                   <span>2 товара</span>
                 </button>
                 <!-- Попап корзины -->
-                <div class="popup popup-cart">
+                <div class="popup">
                   <div class="cart-content">
                     <h2 class="popup-title cart-title">Корзина</h2>
                     <div class="wrapper-cart-products">
@@ -265,9 +264,9 @@
             <legend class="filter-title filter-title-price">Цена:
               <span class="wrapper-price-fields">
                 <label class="visually-hidden" for="min-price">от</label>
-                <input class="price-field min-price" id="min-price" type="number" name="min-price" value="100" min="0" readonly tabindex="-1">&thinsp;₽&nbsp;–&nbsp;
+                <input class="price-field" id="min-price" type="number" name="min-price" value="100" min="0" readonly tabindex="-1">&thinsp;₽&nbsp;–&nbsp;
                 <label class="visually-hidden" for="max-price">до</label>
-                <input class="price-field max-price" id="max-price" type="number" name="max-price" value="500" min="100" readonly tabindex="-1">&nbsp;₽
+                <input class="price-field" id="max-price" type="number" name="max-price" value="500" min="100" readonly tabindex="-1">&nbsp;₽
               </span>
             </legend>
             <!-- Ценовой ренж слайдер -->
@@ -291,7 +290,7 @@
             <legend class="filter-title">Жирность:</legend>
             <div class="fat-filter-substrate">
               <ul class="filter-list">
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -304,7 +303,7 @@
                     <span class="control-label">0%</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -318,7 +317,7 @@
                     <span class="control-label">до 10%</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -331,7 +330,7 @@
                     <span class="control-label">до 30%</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -352,7 +351,7 @@
             <legend class="filter-title">Наполнители:</legend>
             <div class="filler-filter-substrate">
               <ul class="filter-list">
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -372,7 +371,7 @@
                     <span class="control-label">шоколадные</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -392,7 +391,7 @@
                     <span class="control-label">сахарные посыпки</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -411,7 +410,7 @@
                     <span class="control-label">фрукты</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -430,7 +429,7 @@
                     <span class="control-label">сиропы</span>
                   </label>
                 </li>
-                <li class="filter-item">
+                <li>
                   <label class="control">
                     <input
                      class="visually-hidden control-input"
@@ -709,19 +708,19 @@
               <span class="visually-hidden">Назад.</span>
             </a>
             <ol class="pagination">
-              <li class="pagination-item">
+              <li>
                 <a class="pagination-link pagination-link-current">1</a>
               </li>
-              <li class="pagination-item">
+              <li>
                 <a class="pagination-link" href="#">2</a>
               </li>
-              <li class="pagination-item">
+              <li>
                 <a class="pagination-link" href="#">3</a>
               </li>
-              <li class="pagination-item">
+              <li>
                 <a class="pagination-link" href="#">4</a>
               </li>
-              <li class="pagination-item">
+              <li>
                 <a class="pagination-link" href="#">5</a>
               </li>
             </ol>
@@ -738,10 +737,9 @@
           <h2 class="visually-hidden">Наши соцсети.</h2>
           <ul class="social-list">
             <!-- Телеграм -->
-            <li class="social-item">
+            <li>
               <a class="social-button" href="https://t.me/htmlacademy">
                 <svg
-                 class="telegram"
                  width="24"
                  height="24"
                  viewBox="0 0 24 24"
@@ -756,10 +754,9 @@
               </a>
             </li>
             <!-- Вконтакте -->
-            <li class="social-item">
+            <li>
               <a class="social-button" href="https://vk.com/htmlacademy">
                 <svg
-                 class="vk"
                  width="24"
                  height="24"
                  viewBox="0 0 24 24"
@@ -774,10 +771,9 @@
               </a>
             </li>
             <!-- Ютуб -->
-            <li class="social-item">
+            <li>
               <a class="social-button" href="https://www.youtube.com/user/htmlacademyru">
                 <svg
-                 class="youtube"
                  width="24"
                  height="24"
                  viewBox="0 0 24 24"
@@ -815,7 +811,6 @@
         <div class="htmlacademy">
           <a class="htmlacademy-link" href="https://htmlacademy.ru/">
             <img
-             class="htmlacademy-logo"
              src="img/content/logo_htmlacademy.svg"
              alt="Логотип htmlacademy"
              width="93"
