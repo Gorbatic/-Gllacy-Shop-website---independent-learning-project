@@ -63,7 +63,8 @@ body:has(#bg3:checked) {
   background-color: #fcc850;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 
@@ -86,7 +87,8 @@ textarea {
   resize: none;
 }
 
-input, textarea {
+input,
+textarea {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -160,7 +162,7 @@ textarea:disabled::placeholder {
   overflow: hidden;
 }
 
-/* Сentering container */
+/* Главный центрующий контейнер */
 .container {
   display: flex;
   flex-direction: column;
@@ -169,7 +171,7 @@ textarea:disabled::placeholder {
   margin: 0 auto;
 }
 
-/* Button */
+/* Кнопка */
 .button {
   padding: 12px 32px;
 
@@ -194,29 +196,29 @@ a.button {
   margin: 4px; /* поле box-shadow */
 
   background-color: #fcfcfc;
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1),
-              0px 0px 0px 4px rgba(252, 252, 252, 0.4);
+  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1),
+              0 0 0 4px rgba(252, 252, 252, 0.4);
 
   transition: background-color 100ms ease-out, box-shadow 100ms ease-out;
 }
 
 .button-white:hover {
   background-color: rgba(252, 252, 252, 0.4);
-  box-shadow: 0px 4px 15px 0px rgba(133, 133, 133, 0.15),
-              0px 0px 0px 4px #fcfcfc;
+  box-shadow: 0 4px 15px 0 rgba(133, 133, 133, 0.15),
+              0 0 0 4px #fcfcfc;
 }
 
 .button-white:focus-visible {
   background-color: rgba(252, 252, 252, 0.5);
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1);
+  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1);
 
   transition: none;
 }
 
 .button-white:active {
   background-color: #fcfcfc;
-  box-shadow: 0px 0px 0px 2px #2d3440,
-              0px 4px 12px 0px rgba(45, 52, 64, 0.1);
+  box-shadow: 0 0 0 2px #2d3440,
+              0 4px 12px 0 rgba(45, 52, 64, 0.1);
 }
 
 /*
@@ -230,10 +232,10 @@ a.button {
   color: #b9b9b9;
 
   background-color: #e7e7e7;
-  box-shadow: none;
   outline: 4px solid rgba(252, 252, 252, 0.4);
+  box-shadow: none;
+  cursor: not-allowed;
 
-  cursor: default;
   pointer-events: none;
 }
 
@@ -242,6 +244,8 @@ a.button {
 }
 
 .button-white-loading::after {
+  content: "";
+
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -251,8 +255,6 @@ a.button {
 
   background-image: url("../img/decorative/vector/spinner-button-white.svg");
   border-radius: 50%;
-
-  content: "";
 }
 
 .button-pink {
@@ -262,8 +264,8 @@ a.button {
   color: #fcfcfc;
 
   background-color: #ff2f64;
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1),
-              0px 0px 0px 4px rgba(255, 47, 100, 0.3);
+  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1),
+              0 0 0 4px rgba(255, 47, 100, 0.3);
 
   transition: color 100ms ease-out, background-color 100ms ease-out, box-shadow 100ms ease-out;
 }
@@ -272,11 +274,11 @@ a.button {
   color: #2d3440;
 
   background-color: rgba(252, 252, 252, 0.3);
-  box-shadow: 0px 0px 0px 4px #ff2f64;
+  box-shadow: 0 0 0 4px #ff2f64;
 }
 
 .button-pink:focus-visible {
-  box-shadow: 0px 4px 12px 0px rgba(45, 52, 64, 0.1);
+  box-shadow: 0 4px 12px 0 rgba(45, 52, 64, 0.1);
 
   transition: none;
 }
@@ -285,8 +287,8 @@ a.button {
   color: #fcfcfc;
 
   background-color: #feafc3;
-  box-shadow: 0px 0px 0px 2px #2d3440,
-              0px 4px 12px 0px rgba(45, 52, 64, 0.1);
+  box-shadow: 0 0 0 2px #2d3440,
+              0 4px 12px 0 rgba(45, 52, 64, 0.1);
 }
 
 /*
@@ -300,10 +302,10 @@ a.button {
   color: #565c66;
 
   background-color: #b9b9b9;
-  box-shadow: none;
   outline: 4px solid rgba(185, 185, 185, 0.3);
+  box-shadow: none;
+  cursor: not-allowed;
 
-  cursor: default;
   pointer-events: none;
 }
 
@@ -312,6 +314,8 @@ a.button {
 }
 
 .button-pink-loading::after {
+  content: "";
+
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -321,11 +325,9 @@ a.button {
 
   background-image: url("../img/decorative/vector/spinner-button-pink.svg");
   border-radius: 50%;
-
-  content: "";
 }
 
-/* Title */
+/* Основной заголовок */
 .title {
   font-weight: 900;
   font-size: 32px;
@@ -410,9 +412,9 @@ a.button {
 }
 
 .header-menu-item:focus-within .catalog-svg {
-  margin-bottom: -2px;
-
   transform: rotate(180deg);
+
+  margin-bottom: -2px;
 }
 
 .header-menu-item:focus-within .catalog-path {
@@ -614,6 +616,7 @@ a.button {
 .slider-text-container {
   grid-area: 1 / 2 / 2 / 3;
   align-self: center;
+  margin-top: 25px;
   margin-left: 18px;
 }
 
@@ -640,7 +643,7 @@ a.button {
 .slider-button-order {
   max-width: 169px;
   margin: 0;
-  margin-top: 48px;
+  margin-top: 24px;
 }
 
 /* Пагинация слайдера */
@@ -662,10 +665,9 @@ a.button {
   background-color: rgba(252, 252, 252, 0.3);
   border-radius: 50%;
   outline-color: #fcfcfc;
+  cursor: default;
 
   transition: background-color 300ms ease-out;
-
-  cursor: pointer;
 }
 
 .slider-pagination-dot:hover {
@@ -720,9 +722,9 @@ a.button {
   height: 24px;
   padding: 2px;
 
+  background-clip: content-box;
   border-radius: 50%;
   outline: 2px solid rgba(252, 252, 252, 0.3);
-  background-clip: content-box;
 
   transition: background-color 100ms ease-out, opacity 100ms ease-out;
 }
@@ -774,6 +776,8 @@ a.button {
 
 /* Подложка слайдера */
 .slider-current::before {
+  content: "";
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -783,8 +787,6 @@ a.button {
   width: 312px;
   height: 312px;
   border-radius: 50%;
-
-  content: "";
 }
 
 .slider-current-strawberry {
@@ -795,6 +797,10 @@ a.button {
   width: 327px;
 
   background-color: #ffcbd8;
+}
+
+.slider-image {
+  margin-top: 20px;
 }
 
 /* Управление слайдером */
@@ -886,6 +892,8 @@ a.button {
 }
 
 .slider-next-product::before {
+  content: "";
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -895,8 +903,6 @@ a.button {
   height: 100px;
 
   border-radius: 50%;
-
-  content: "";
 }
 
 .slider-strawberry-next-product::before {
@@ -965,7 +971,6 @@ a.button {
 
 .container-banners {
   display: flex;
-  align-items: flex-end;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -980,6 +985,9 @@ a.button {
 }
 
 .wrapper-banner-essence {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 353px;
   padding: 36px;
   padding-right: 11px;
@@ -1001,8 +1009,9 @@ a.button {
 
 .banner-button-gift {
   max-width: 206px;
-  margin: 0;
-  margin-top: 28px;
+  margin-top: auto;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 .banner-image {
@@ -1010,12 +1019,20 @@ a.button {
 }
 
 /* Популярные вкусы */
+.product-cards-title {
+  width: 527px;
+  margin: 0 auto 56px auto;
+
+  text-align: center;
+}
 
 /* О нас */
 .about {
   padding: 24px;
 
+  background-color: #ede1c7;
   background-image: url("../img/decorative/bg-about.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 16px;
@@ -1051,6 +1068,8 @@ a.button {
 }
 
 .advantages li::before {
+  content: "";
+
   position: absolute;
   top: 0;
   left: 0;
@@ -1063,8 +1082,6 @@ a.button {
   background-size: 32px 32px;
   border: 2px solid #2d3440;
   border-radius: 50%;
-
-  content: "";
 }
 
 .advantage-own::before {
@@ -1150,6 +1167,9 @@ a.button {
   top: 0;
   left: 0;
 
+  width: 100%;
+  height: 100%;
+
   border-radius: 16px;
 }
 
@@ -1158,7 +1178,9 @@ a.button {
   min-height: 224px;
   padding: 6px;
 
+  background-color: #edf1f5;
   background-image: url(../img/decorative/bg-email.png);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 16px;
@@ -1206,8 +1228,10 @@ a.button {
 }
 
 .delivery {
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   background-image: url("../img/decorative/bg-delivery.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .container-delivery {
@@ -1246,6 +1270,7 @@ a.button {
 }
 
 .delivery-hint {
+  width: 380px;
   margin: 0;
   margin-bottom: 32px;
 }
@@ -1291,7 +1316,6 @@ a.button {
   background-repeat: no-repeat;
   background-position: center;
   border: none;
-
   cursor: help;
 }
 
@@ -1316,16 +1340,19 @@ a.button {
   background-color: #ffffff;
   border: 1px solid #b9b9b9;
   border-radius: 1px;
-  box-shadow: 0px 4px 8px 0px rgba(194, 194, 194, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(194, 194, 194, 0.2);
 
   pointer-events: none;
 }
 
 /* Вырезка слева, треугольник тултипа */
 .tooltip::before {
+  content: "";
+
   position: absolute;
   top: 11px;
   left: -6px;
+  transform: rotate(-45deg);
 
   width: 11px;
   height: 11px;
@@ -1335,9 +1362,6 @@ a.button {
   border-left: 1px solid #b9b9b9;
   border-top-right-radius: 1px;
   border-bottom-left-radius: 1px;
-  transform: rotate(-45deg);
-
-  content: "";
 }
 
 .info:hover + .tooltip,
@@ -1371,8 +1395,12 @@ a.button {
 
 /* Контактная информация */
 .contact-info {
+  padding-left: 64px;
+
   background-color: #e9c6ca;
   background-image: url("../img/decorative/bg-contact-info.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .contact-info-content {
@@ -1410,8 +1438,9 @@ a.button {
 }
 
 .contact-button-feedback {
-  max-width: 100%;
+  width: 250px;
   margin-top: 8px;
+  margin-left: 0;
 }
 
 /* ПОДВАЛ */
@@ -1461,19 +1490,19 @@ a.button {
 }
 
 .for-suppliers::before {
+  content: "";
+
   position: absolute;
   top: 50%;
-  left: 0;
   transform: translateY(-50%);
+  left: 0;
 
   width: 16px;
   height: 16px;
 
-  background-image: url("../img/decorative/vector/Heart-fill.svg");
+  background-image: url("../img/decorative/vector/heart-fill.svg");
   background-repeat: no-repeat;
   background-position: center;
-
-  content: "";
 }
 
 /* HTML Academy */
@@ -1526,7 +1555,7 @@ a.button {
 
   background-color: #fcfcfc;
   border-radius: 8px;
-  box-shadow: 0px 15px 40px 0px rgba(45, 52, 64, 0.12);
+  box-shadow: 0 15px 40px 0 rgba(45, 52, 64, 0.12);
 }
 
 .modal-button-close {
@@ -1623,6 +1652,8 @@ a.button {
 }
 
 .breadcrumbs-item:not(:first-child)::before {
+  content: "";
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1634,8 +1665,6 @@ a.button {
   background-image: url("../img/decorative/vector/chevrons-right.svg");
   background-repeat: no-repeat;
   background-position: center;
-
-  content: "";
 }
 
 .breadcrumbs-link {
@@ -1695,7 +1724,7 @@ a.button {
   color: #2d3440;
 
   background-color: rgba(252, 252, 252, 0.3);
-  background-image: url("../img/decorative/vector/Arrow-down.svg");
+  background-image: url("../img/decorative/vector/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: center right 13px;
   border: none;
@@ -1737,9 +1766,8 @@ a.button {
 
   background-color: transparent;
   border: none;
-
-  appearance: textfield;
   cursor: default;
+  appearance: textfield;
 }
 
 .price-field::-webkit-outer-spin-button,
@@ -1750,8 +1778,8 @@ a.button {
 
 .price-field:focus,
 .price-field:focus-visible {
-  outline: none;
   border: none;
+  outline: none;
   box-shadow: none;
 }
 
@@ -1811,9 +1839,9 @@ a.button {
 
 .range-toggle:focus-visible {
   background-color: #2d3440;
+  outline: none;
   box-shadow: 0 0 0 2px #2d3440,
               inset 0 0 0 6px #fcfcfc;
-  outline: none;
 }
 
 .range-toggle:active {
@@ -1852,14 +1880,13 @@ a.button {
   position: relative;
 
   display: inline-block;
-
   padding-left: 24px;
 
   cursor: pointer;
 }
 
 .control:has(.control-input:disabled) {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* Кастомные маркеры */
@@ -1871,6 +1898,11 @@ a.button {
 
   width: 16px;
   height: 16px;
+}
+
+.control-input:focus-visible ~ .control-mark {
+  outline: 2px solid #2d3440;
+  outline-offset: 2px;
 }
 
 /* Радиокнопка */
@@ -1894,6 +1926,8 @@ a.button {
 
 /* Включена */
 .control-input[type="radio"]:checked + .control-mark::before {
+  content: "";
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1906,8 +1940,6 @@ a.button {
   border-radius: 50%;
 
   transition: background-color 100ms ease-out;
-
-  content: "";
 }
 
 .control:hover .control-input[type="radio"]:checked + .control-mark::before {
@@ -2005,8 +2037,8 @@ a.button {
 
 .filter-button-submit:disabled {
   opacity: 0.4;
+  cursor: not-allowed;
 
-  cursor: default;
   pointer-events: none;
 }
 
@@ -2114,8 +2146,8 @@ a.button {
 
 .button-put-cart:disabled {
   background-color: #b9b9b9;
-
   cursor: not-allowed;
+
   pointer-events: none;
 }
 
@@ -2124,6 +2156,8 @@ a.button {
 }
 
 .card-taste-price {
+  max-width: 150px;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -2152,7 +2186,7 @@ a.button {
   width: 16px;
   height: 16px;
 
-  background-image: url("../img/decorative/vector/Arrow-down.svg");
+  background-image: url("../img/decorative/vector/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -2165,8 +2199,8 @@ a.button {
 */
 .pagination-control[aria-disabled="true"] {
   opacity: 0.3;
+  cursor: not-allowed;
 
-  cursor: default;
   pointer-events: none;
 }
 
@@ -2200,8 +2234,8 @@ a.button {
 
 .pagination-link:focus-visible {
   background-color: rgba(252, 252, 252, 0.3);
-  box-shadow: inset 0 0 0 1px #2d3440;
   outline: none;
+  box-shadow: inset 0 0 0 1px #2d3440;
 }
 
 .pagination-link:active {
@@ -2211,8 +2245,8 @@ a.button {
 
 .pagination-link-current {
   background-color: #fcfcfc;
-
   cursor: default;
+
   pointer-events: none;
 }
 
@@ -2238,7 +2272,7 @@ a.button {
 
   background-color: #fcfcfc;
   border-radius: 4px;
-  box-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
 }
 
 li:focus-within .popup {
@@ -2258,7 +2292,7 @@ li:focus-within .popup {
   left: 1px;
 
   width: 135px;
-  padding: 8px 0px;
+  padding: 8px 0;
 }
 
 .catalog-menu-title {
@@ -2277,13 +2311,13 @@ li:focus-within .popup {
 
 /* Декоративный разделитель */
 .catalog-menu::before {
+  content: "";
+
   display: block;
   height: 1px;
   margin: 3px 16px 4px 16px;
 
   background-color: #b9b9b9;
-
-  content: "";
 }
 
 .catalog-menu-link {
@@ -2380,6 +2414,11 @@ li:focus-within .popup {
 .auth-button-login {
   max-width: 143px;
   margin-right: 23px;
+  margin-left: 0;
+}
+
+.wrapper-auth-links {
+  margin-top: 4px;
 }
 
 .auth-link {
@@ -2412,12 +2451,12 @@ li:focus-within .popup {
 }
 
 .wrapper-cart-products::after {
+  content: "";
+
   display: block;
   height: 1px;
 
   background-color: #e7e7e7;
-
-  content: "";
 }
 
 .cart-product {
@@ -2494,6 +2533,7 @@ li:focus-within .popup {
 
 .cart-button-order {
   max-width: 228px;
+  margin-left: 0;
 }
 
 .cart-total {
