@@ -1500,7 +1500,7 @@ a.button {
   width: 16px;
   height: 16px;
 
-  background-image: url("img\decorative\vector\heart-fill.svg");
+  background-image: url("../img/decorative/vector/heart-fill.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
