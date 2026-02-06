@@ -976,12 +976,16 @@ a.button {
 }
 
 .banner {
-  display: flex;
-  justify-content: space-between;
   width: 570px;
 
   background-color: #ff7799;
+  background-repeat: no-repeat;
+  background-position: right bottom;
   border-radius: 16px;
+}
+
+.banner-raspberry {
+  background-image: url("../img/decorative/banner-raspberry.png");
 }
 
 .wrapper-banner-essence {
@@ -1014,8 +1018,8 @@ a.button {
   margin-left: 0;
 }
 
-.banner-image {
-  align-self: flex-end;
+.banner-marshmallow {
+  background-image: url("../img/decorative/banner-marshmallows.png");
 }
 
 /* Популярные вкусы */
@@ -1041,7 +1045,7 @@ a.button {
 .container-about {
   padding: 56px 40px;
 
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 16px;
 }
 
@@ -1085,19 +1089,19 @@ a.button {
 }
 
 .advantage-own::before {
-  background-image: url(../img/decorative/vector/ice-cream.svg);
+  background-image: url("../img/decorative/vector/ice-cream.svg");
 }
 
 .advantage-ingredients::before {
-  background-image: url(../img/decorative/vector/cow.svg);
+  background-image: url("../img/decorative/vector/cow.svg");
 }
 
 .advantage-quality::before {
-  background-image: url(../img/decorative/vector/leaf.svg);
+  background-image: url("../img/decorative/vector/leaf.svg");
 }
 
 .advantage-delivery::before {
-  background-image: url(../img/decorative/vector/thermometer.svg);
+  background-image: url("../img/decorative/vector/thermometer.svg");
 }
 
 .advantages-text {
@@ -1115,13 +1119,14 @@ a.button {
   width: 570px;
   min-height: 224px;
 
-  background-color: #fff;
+  background-color: #ffffff;
+  background-image: url("../img/decorative/blog-serving.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   border-radius: 16px;
 }
 
 .blog-link {
-  position: relative;
-
   display: block;
   min-height: 100%;
   padding: 33px 235px 33px 32px;
@@ -1130,7 +1135,6 @@ a.button {
   text-decoration-line: none;
 
   border-radius: 16px;
-  overflow: hidden;
 }
 
 .blog-link:focus-visible {
@@ -1138,9 +1142,6 @@ a.button {
 }
 
 .wrapper-blog-link-content {
-  position: relative;
-  z-index: 1;
-
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1162,24 +1163,13 @@ a.button {
   color: #565c66;
 }
 
-.blog-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 16px;
-}
-
 .subscribe {
   width: 570px;
   min-height: 224px;
   padding: 6px;
 
   background-color: #edf1f5;
-  background-image: url(../img/decorative/bg-email.png);
+  background-image: url("../img/decorative/bg-email.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1190,7 +1180,7 @@ a.button {
   min-height: 100%;
   padding: 26px;
 
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 16px;
 }
 
@@ -1685,7 +1675,7 @@ a.button {
 .filter-form {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
   row-gap: 16px;
   width: 823px;
   margin-bottom: 44px;
@@ -1873,7 +1863,9 @@ a.button {
 
 .filter-list {
   display: flex;
-  column-gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
 }
 
 .control {
@@ -1954,6 +1946,7 @@ a.button {
 
 /* Наполнители */
 .filter-group-fillers {
+  width: 604px;
   margin-right: 16px;
 }
 
@@ -2000,6 +1993,7 @@ a.button {
 }
 
 .filter-button-submit {
+  align-self: center;
   max-width: 219px;
   min-width: 189px;
 
